@@ -1,15 +1,4 @@
-"""READ ME!!!
 
-The next task is to update recommendations from second iterations if there are a lot of options
-implement a new list to show the list(or dict with priority) of words in priority order to show what gives the maximum entropy
-
-Refer 3Blue1Brown youtube video to better understand entropy, choosing the most probable solution
-
-Check letter frequency (In 5 letter words if possible)
-write a program for the above using words.txt as a source to find the letter frequency
-
-nvm formulate an algorithm to find at what iteration what word is suitable whether it should select from the possible words or from all words which  contains the maximum number needed letter details
-"""
 
 
 from entro import findBest
