@@ -1,7 +1,7 @@
 
 
 
-from entro import findBest
+from entro import findBest # Entropy based calculation to find the best guess
 
 
 #from loader import load_words
@@ -9,27 +9,27 @@ def load_words(filename="words.txt"):
     # Loads words from a text file into a set
     with open(filename, "r") as f:
         return {line.strip().upper() for line in f}  # Set
-word_list = load_words()# Set of all words
+word_list = load_words() # Set of all words
 
 word_length = 5
 chances = 6
 while True:
-    first_word = {5:"CRANE"}
-    possible_words = word_list
+    first_word = {5:"CRANE"} # initial recommendation(s)
+    possible_words = word_list     
     wrong_position = {}  # letter: [indexes]
     true_word = ['_', '_', '_', '_', '_']
-    current_grid = []
-    colouring = []
-    discarded_letters = []
+    current_grid = []    # Tracks the actual game grid
+    colouring = []    # corresponding colors of the above
+    discarded_letters = []   # Letters that cant be used
 
     print("----------------------------------")
-    for i in range (chances):
+    for i in range (chances): # Iterate each guesses
         print("")
         if i == 0 and word_length == 5:
-            print(f"Recommended starting word : {first_word[word_length]}")
+            print(f"Recommended starting word : {first_word[word_length]}") # Recommend a statistically best guess (CRANE)
         else:
-            print("Possible words: ")
-            if len(possible_words) > 400:
+            print("Possible words: ")    # All the words that could go here
+            if len(possible_words) > 400:    
                 print("400+")
             elif len(possible_words) == 0:
                 print("None!")
@@ -96,10 +96,4 @@ while True:
                 new_possible_words.add(word)
         possible_words = new_possible_words
             
-        
-                
-            
-                
-                
-    
         
